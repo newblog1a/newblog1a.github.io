@@ -189,6 +189,20 @@ exclude:
   - node_modules
   - package*.json
 
+include:
+  - img
+  - assets
+
+prose:
+  media: "img"
+  metadata:
+    _posts:
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "published"
+          value: "true"
+
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
