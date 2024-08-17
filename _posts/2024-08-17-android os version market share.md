@@ -35,6 +35,7 @@ https://www.statista.com/statistics/865837/mobile-android-version-share-in-the-u
 
 ## Android Version Market Share Worldwide
 
+```
 2024-08-05
 +-----+------+--------------+-------+-------+----------+----------+
 | API |   OS | CODE_NAME    |  WW % |  JP % | WW SUM % | JP SUM % |
@@ -67,6 +68,7 @@ https://www.statista.com/statistics/865837/mobile-android-version-share-in-the-u
 +-----+------+--------------+-------+-------+----------+----------+
 |  34 | 14.0 | U            | 28.11 | 33.82 |    28.11 |    33.82 |
 +-----+------+--------------+-------+-------+----------+----------+
+```
 
 https://gist.github.com/benigumocom/fe6e80ace2833be52642a968210ecf03
 
