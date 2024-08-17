@@ -11,6 +11,7 @@ https://gs.statcounter.com/os-version-market-share/android
 
 ---
 
+```
 Android OS version	Market share	Change in the last 30 days
 14 (Android 14)	21.5%	 18.9%
 13 (Android 13)	20.5%	 2.2%
@@ -22,6 +23,7 @@ Android OS version	Market share	Change in the last 30 days
 7.0-7.1 (Nougat)	2.5%	 14.2%
 6.0 (Marshmallow)	0.8%	 10.1%
 5.0-5.1 (Lollipop)	0.8%	 13.1%
+```
 
 https://www.appbrain.com/stats/top-android-sdk-versions
 
