@@ -1,7 +1,6 @@
 ---
 published: true
 ---
-## A New Post
 
 
 ![StatCounter-android_version-ww-monthly-202307-202407.png]({{site.baseurl}}/img/StatCounter-android_version-ww-monthly-202307-202407.png)
@@ -33,8 +32,6 @@ https://www.appbrain.com/stats/top-android-sdk-versions
 ![2024-08-17 12_32_12-Market share of Android OS versions U.S. 2017-2024 _ Statista - Brave.jpg]({{site.baseurl}}/img/2024-08-17 12_32_12-Market share of Android OS versions U.S. 2017-2024 _ Statista - Brave.jpg)
 
 https://www.statista.com/statistics/865837/mobile-android-version-share-in-the-us/
-
----
 
 ## Android Version Market Share Worldwide
 
@@ -74,3 +71,16 @@ https://www.statista.com/statistics/865837/mobile-android-version-share-in-the-u
 https://gist.github.com/benigumocom/fe6e80ace2833be52642a968210ecf03
 
 https://developer.android.com/about/dashboards
+
+## Android Distribution Numbers as of May 1, 2024
+
+![android-distribution-numbers-may-2024.webp]({{site.baseurl}}/img/android-distribution-numbers-may-2024.webp)
+
+![android-distribution-numbers-may-2024.jpg]({{site.baseurl}}/img/android-distribution-numbers-may-2024.jpg)
+
+
+https://9to5google.com/2024/07/30/android-distribution-numbers-2024-update/
+
+## Android Statistics 2024 By Users and Revenue
+
+https://www.coolest-gadgets.com/android-statistics
