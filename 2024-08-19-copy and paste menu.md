@@ -1,3 +1,7 @@
+---
+published: true
+---
+
 ## win7
 
 move folder:
