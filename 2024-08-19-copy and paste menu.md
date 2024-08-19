@@ -26,3 +26,6 @@ Win10複製相同檔案名至同一資料夾之彈出視窗問題
 能不能設定成像win7那樣，直接變成image(2).jpg就好? 不要再跳出彈出視窗了
 ```
   answers.microsoft.com/zh-hant/windows/forum/all/win10複製相同檔/83546c7c-09fa-4b89-92c3-56c74e1a0afc
+  
+How To Copy And Keep Both Files In Windows 10 File Explorer
+  https://www.addictivetips.com/windows-tips/copy-and-keep-both-files-windows-10-file-explorer/
