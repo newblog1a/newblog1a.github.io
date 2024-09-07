@@ -32,4 +32,7 @@ Is it OK to enable both Winforms and WPF for a .NET 6.0 application?
 
 https://github.com/d2phap/ImageGlass/blob/develop/Source/ImageGlass/ImageGlass.csproj
 
-relative: webview
+### relative: webview
+
+Webview2 is the UI for the Settings, Quick Setup, About, Check for Update dialog. You can use ImageGlass 9 without Webview2 (need to bypass the Quick Setup dialog), or feel free to use the version 8 or other apps.
+  https://github.com/d2phap/ImageGlass/discussions/1700
