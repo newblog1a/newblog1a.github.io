@@ -31,3 +31,5 @@ Is it OK to enable both Winforms and WPF for a .NET 6.0 application?
 ```
 
 https://github.com/d2phap/ImageGlass/blob/develop/Source/ImageGlass/ImageGlass.csproj
+
+relative: webview
