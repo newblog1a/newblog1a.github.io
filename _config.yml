@@ -171,7 +171,7 @@ sass:
   style: compressed
 
 compress_html:
-  clippings: all
+  clippings: []
   comments: all
   endings: all
   profile: false
