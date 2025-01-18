@@ -82,6 +82,12 @@ CANON正版噴頭到哪裡都貴真的麻煩
 廢墨很快就滿了，你需要回原廠解鎖
   https://www.mobile01.com/topicdetail.php?f=498&t=6447363
   
+CANON-PIXMA G2010 2990元可自行更換噴頭、墨水及廢墨盒（有掃描、列印、影印）沒有WiFi。
+
+CANON 光可換噴頭跟廢墨就贏了
+HP只能換噴頭
+  https://www.mobile01.com/topicdetail.php?f=498&t=6966644
+  
 ## canon MG3670
 MG3670，使用原廠的PG740/CL741墨水匣，沒墨水後鑽洞加墨水，半年來這兩個墨水匣共計印了兩千多張，看起來狀況還很好
 
@@ -95,6 +101,9 @@ ST v.4713 這個是這台機器需要的軟體版本
 原廠清零費用900-1050不等
 坊間印表機行300-600元不等
   https://www.mobile01.com/topicdetail.php?f=498&t=6456236
+  
+這系列有些機種可用機身按鍵組合直接整機回原廠
+有些需要先按機身按鍵進入服務模式搭配service tools才可以歸零
   
 ## 堵塞
 
@@ -169,6 +178,35 @@ B)印表機是CMYK輸出，以白色為底去控制"黑、洋紅、洋藍、黃"
   https://www.mobile01.com/topicdetail.php?f=498&t=3300209&p=2
   
 ## 市場
+CANON, HP是熱泡噴頭
+BROTHER 和 EPSON壓電式噴頭
+壓電式的墨水拿到熱泡式噴頭的機器容易燒壞噴頭 (壓電式噴頭因免加熱內部某些溶劑會使溫度過高)
+染料墨水和顏料墨水混到，不論哪個廠牌一定堵塞
+  https://www.mobile01.com/topicdetail.php?f=498&t=6552032
+  
+深層清潔印字頭4次就要耗將近100CC的墨水,這個成本EPSON也沒告訴大家
+  https://www.mobile01.com/topicdetail.php?f=498&t=6880484&p=4
+  
+  
+【體驗心得】HP Smart Tank 580 連續供墨印表機
+
+其實HP這種熱噴噴頭自從HP把相片印表機的產線砍掉
+拿掉微變噴頭技術(DDV~2.2pL)之後，只要近看就會看到墨點了
+
+跟Epson相比來說，E牌的最佳模式600dpi幾乎等於HP用1200dpi的細緻度
+目前HP的印表機染料機都是8pL墨滴，商用機墨滴幾乎都12pL以上
+墨點頗明顯的
+
+建議當作純文書機就好
+  https://www.mobile01.com/topicdetail.php?f=498&t=6842581
+
+
+Epson黑墨防水L4260(廢墨滿時需要解廢墨)
+Brother 大連供全用不防水墨
+HP目前只建議在打到骨折價格的時候才考慮
+  https://www.ptt.cc/bbs/Printer_scan/M.1725208804.A.D34.html
+  
+  
 2021
 
 B牌故障印為內部結構的關係
@@ -196,4 +234,3 @@ BROTHER是三家唯一沒有大圖機，全頁式印表機的廠商…
 
 有攝影廣告設計的幾乎都用EPSON…學工程繪圖輸出Cad的幾乎都是HP的天下
   https://www.mobile01.com/topicdetail.php?f=498&t=6437481&p=2
-
