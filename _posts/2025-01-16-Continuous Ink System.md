@@ -234,3 +234,46 @@ BROTHER是三家唯一沒有大圖機，全頁式印表機的廠商…
 
 有攝影廣告設計的幾乎都用EPSON…學工程繪圖輸出Cad的幾乎都是HP的天下
   https://www.mobile01.com/topicdetail.php?f=498&t=6437481&p=2
+
+---
+
+canon PIXMA MG3070/3077 $2k 網拍$1.6k
+  CL-746 (Colour) 180 頁數 
+  CL-746XL (Colour) 300 頁數
+  依據ISO/IEC 24711
+  PG-745 PGBK (Pigment Black) 180 頁數 NT$768
+  PG-745XL PGBK (Pigment Black) 300 頁數 NT$968
+canon PIXMA MG3670 $2.6k 空機$1k+墨水夾$1.1k+改裝$1.3k
+Canon TR4670 $2.7k 傳真多功能
+  PG745 原廠黑色墨匣
+  紙匣：100張
+canon PIXMA G2010 $3.5k 多功能 超高印量墨水 網拍$3k
+MG3070 vs MG3670 vs G2010
+  MG3670 掃描解析度較佳，但清零要配合電腦軟體。
+  G2010廢墨清零容易
+  MG3070廢墨清零似乎沒辦法
+
+HP DeskJet 4220 無線多功能彩色噴墨印表機 $2.5k
+  HP 67 黑色原廠墨水匣(3YM56AA)  列印量120  $708
+  HP 67 XL 高印量黑色原廠墨水匣  列印量	240  $1,096
+    副廠  67XXL加大容量黑色---1000頁（可填充，A4紙5%覆蓋率） $550
+	shopee.tw/墨三思HP-67-67XL-67XXL副廠墨水匣-適用於-4120-2700-2332-2330-1212-2823墨匣-i.48275764.22831351530
+HP Smart Tank 580 相片彩色連續供墨多功能 $4.8k
+  HP GT53XL / HP GT52 原廠墨水瓶  $495
+  ・列印量可達6000頁
+  ・容量135ml
+
+EPSON XP-2200 $2k
+  列印/影印/掃描/Wi-Fi無線
+  C13T10J150標準型墨水匣 黑(250頁)
+  https://myepson.epson.com.tw/Product/moreinfo_33493.htm
+  EPSON 原廠墨水匣 T10J150 黑【任4件9折】
+    $600
+	列印張數:約200張印量(依覆蓋率有所不同)
+    https://myepson.epson.com.tw/product/moreinfo_33494.htm
+  副廠 $355 黑𝟐𝟓𝟎張
+    shopee.tw/【台灣嚴選】嚴選副廠加大容量墨水匣-Epson-T10J-10J-WF-2930-XP-2200-全新相容墨水匣-i.71031354.25429351830
+EPSON L3210 三合一 連續供墨 $4.3k
+
+brother DCP-T220 $4.8k 連供
+  列印速度,圖文並茂比同級 {EPOSN L3110}{ CANON G2010} 快蠻多的
