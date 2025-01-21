@@ -300,10 +300,16 @@ brother DCP-T220 $4.8k 連供
 
 canon PIXMA MG3670  掃描解析度	1,200 x 2,400 dpi
 Brother DCP-1610W 無線多功能雷射複合機  600x600 dpi
-PANTUM 奔圖 M6500NW  1200dpi * 1200 dpi (彩色)
+?? PANTUM 奔圖 M6500NW  1200dpi * 1200 dpi (彩色)
   https://newguest88.pixnet.net/blog/post/355531765
+brother DCP-T220 $4.8k 連供
+  掃描玻璃解析度  最高 1,200 dpi x 2,400 dpi
 
 canon mp258 掃描︰
 光學解析度(水平 x 垂直) 最大︰600 dpi x 1200 dpi
 增強解析度最大：19200 dpi x 19200 dpi
   https://tw.canon/zh_TW/support/6200047900
+HP Deskjet F2410 彩色多功能事務機:
+光學掃瞄解析度
+可達 1200 dpi
+???光學掃描解析度1200x2400 dpi
