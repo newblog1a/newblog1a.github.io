@@ -63,3 +63,14 @@ RAZER現在主要賣點就是光學鍵，所有Essential級都沒有光學鍵通
 因為P/N碼(品名編號)、S/N碼(產品編號)都直接印在外盒了。
   https://home.gamer.com.tw/creationDetail.php?sn=5372526
   #原廠報修從海外寄來
+
+---
+
+羅技 滑鼠 官網 Logitech:
+Logitech M90 有線光學滑鼠 $229
+  https://support.logi.com/hc/zh-tw/articles/360025082693-Warranty-Mouse-M90
+Logitech M100r 光學滑鼠 $269
+  簡介 3yrs保固
+Logitech M110 靜音滑鼠 $329
+  簡介 3yrs保固
+  store.logitech.tw/collections/滑鼠?sort_by=price-ascending
