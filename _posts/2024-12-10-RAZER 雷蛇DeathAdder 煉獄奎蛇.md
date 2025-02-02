@@ -74,3 +74,6 @@ Logitech M100r 光學滑鼠 $269
 Logitech M110 靜音滑鼠 $329
   簡介 3yrs保固
   store.logitech.tw/collections/滑鼠?sort_by=price-ascending
+  
+蝦皮 較正規的店 原價。
+  陸輸入 M100R $95
