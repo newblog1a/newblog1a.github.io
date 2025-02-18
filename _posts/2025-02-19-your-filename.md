@@ -84,8 +84,11 @@ https://avery1234.pixnet.net/blog/post/66734028
   https://www.youtube.com/watch?v=H4LK4MyptMI
 绳结技巧，长条形物体捆绑就用这个方法，结实牢固
   https://www.youtube.com/watch?v=CvnfMcs5IuM
-  
-## chatgpt
+多根圆柱体及条形物体的一种S形捆绑绳结技巧
+  https://www.youtube.com/watch?v=uXXQWeBG1S8
+
+## xxx
+chatgpt
 3. 多根長條物體捆在一起
 橫木結（Timber Hitch）：適合綁住多根木材或長條狀物體，便於拖拉。
 管束結（Pile Hitch）：適合綑綁圓柱形物體，如鋼管或PVC管，容易調整。
@@ -100,3 +103,15 @@ https://avery1234.pixnet.net/blog/post/66734028
 曳木結 Timber Hitch
 是一个简单且使用的绳结，它有一个可以随意调整大小的圈，非常适合捆绑木材或者树枝之类的东西。
   http://theknotsworld.com/index.php/2021/12/15/%E6%9B%B3%E6%9C%A8%E7%B5%90-timber-hitch/
+  
+拉柴结/系木结
+特征:虽然是一个方便可靠的结, 但是一定要受到拉力，否则它将会松脱而导致危险。
+  
+---
+桩结（Pile hitch） 桩结是绳圈绕着木桩一圈从下向上压住主绳套在木桩上，拉紧就完成了。 一日一结小常识： 桩结非常容易系打，适用于码头停靠船舶使用
+
+## anime
+各种绳结的绑法，受用无穷，总有一个你能用的到
+  https://zhuanlan.zhihu.com/p/433973573
+  
+https://knots3d.com/zh-TW/%E5%8C%85%E8%A3%B9%E7%B5%90
