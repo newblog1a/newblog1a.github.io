@@ -7,40 +7,43 @@ https://npmtrends.com/bootstrap-vs-tailwindcss
 ![2025-02-21 01_34_14-bootstrap vs tailwindcss _ npm trends - Brave.jpg]({{site.baseurl}}/img/2025-02-21 01_34_14-bootstrap vs tailwindcss _ npm trends - Brave.jpg)
 
 優點
-Css檔案變小非常很多
-因為html和css綁定在一起，所以沒有樣式汙染問題，在寫scss時，時常有的會將共同樣式一起寫，之後再單獨寫獨特樣式，造成一個component，有好幾處scss需要更改，造成維護困難，在tailwind也不會發生。
-不用命名，其實我覺得BEM滿好用，雖然有時候命名頭也滿痛。
-編譯速度算滿快，到底多快我沒有測試，約都在1秒內，且我想看畫面沒有延遲過。當然現在一堆飆車等級的編譯工具，例如vite and turborepo都很棒。
-layout很快，速度相比scss，速度上快非常多
-html寫完結構，直接就可以在class寫樣式，相比傳統scss，scss需要先命名class，將命名的class寫到scss檔案中，並寫好巢狀，才開始寫樣式。
-複製貼上html可以順便把css帶著走
-有一種情境，這邊有的樣式，另一個頁也有類似的，先前作法上可能會就會把html複製貼過去，之後再去複製scss，還要仔細檢查有沒有複製到不會用到的scss，時間上就會造成不必要的浪費。
-在tailwind，直接複製貼上，刪除不要的html，就能一起刪除了。
-學習成本低，上手容易，比較可被團隊所接受，觀察大部分同事學習成本約一個禮拜後，就可以順暢切版。
-生態系強大，以TailwindCss為基礎所開發的UI已經很成熟，例如：Radix跟shadcn/ui
+==
+
+1.  Css檔案變小非常很多
+2.  因為html和css綁定在一起，所以沒有樣式汙染問題，在寫scss時，時常有的會將共同樣式一起寫，之後再單獨寫獨特樣式，造成一個component，有好幾處scss需要更改，造成維護困難，在tailwind也不會發生。
+3.  不用命名，其實我覺得BEM滿好用，雖然有時候命名頭也滿痛。
+4.  編譯速度算滿快，到底多快我沒有測試，約都在1秒內，且我想看畫面沒有延遲過。當然現在一堆飆車等級的編譯工具，例如vite and turborepo都很棒。
+5.  layout很快，速度相比scss，速度上快非常多\
+    html寫完結構，直接就可以在class寫樣式，相比傳統scss，scss需要先命名class，將命名的class寫到scss檔案中，並寫好巢狀，才開始寫樣式。
+6.  複製貼上html可以順便把css帶著走\
+    有一種情境，這邊有的樣式，另一個頁也有類似的，先前作法上可能會就會把html複製貼過去，之後再去複製scss，還要仔細檢查有沒有複製到不會用到的scss，時間上就會造成不必要的浪費。\
+    在tailwind，直接複製貼上，刪除不要的html，就能一起刪除了。
+7.  學習成本低，上手容易，比較可被團隊所接受，觀察大部分同事學習成本約一個禮拜後，就可以順暢切版。
+8.  生態系強大，以TailwindCss為基礎所開發的UI已經很成熟，例如：Radix跟shadcn/ui
 
 缺點
-前期設定Style guide，需要設定config較久，才可以開始layout，之後就可以直接在class寫樣式，如果config沒寫完整，就需要常常回去tailwind.config.js補樣式，其實會滿心累。
-(雖然不設定也可以用，但之後維護會比較混亂)
-沒有辦法直接複製貼上網路上、設計稿或開發者工具上的樣式
-例如:
-1. 在設計稿上的box-shadow可以直接複製貼上到CSS檔案中，但使用Tailwind就需要重新撰寫，反而會變得比較麻煩。
-2. 在開發者工具上會去layout完，結果沒辦法直接複製貼上到程式碼庫中。
-如果沒有辦法撰寫html，就無法編輯class
-例如:
-1.用CMS系統，會在特定的狀況下無法去修改CMS的html。當然也可以在css檔案中，去選CMS給的class，其中使用@apply的方式去呼叫tailwind語法出來使用。
-2.用一些ui庫或是library也有相同狀況，沒辦法直接修改到某個DOM的class
-樣式複雜，維護性就很差
-樣式如果複雜，就會看到class中整坨的tailwind，看了眼睛很累，雖然有自動排序tailwind class的prettier，自己用了是覺得還好。
-沒有辦法註解
-例如:之前在撰寫SCSS時，會把某一行的css給註解起來做測試之類的用途。tailwind的話，因為都在html中，註解會把整個html註解起來。
-Vscode extension “Tailwind CSS IntelliSense”，在智能提示框顏色顯示方面只能顯示RGB，無法顯示hex
-目前似乎無解。hex的可讀性比較高，我自己使用上也比較習慣，設計稿上用hex也是設計師預設的方式，所以比較難去更改。我通常都要先去style guide介面中，找顏色，再直接複製貼上到class裡面，反而變麻煩很多。
-Color Hex Code in intellisense box #418
-nuxt.js中改tailwind.config.js，會需要退出，再重新啟動，才能使用。
-沒辦法在class中使用calc()，需要用其他方式變通。
-is it possible to add min-h-[calc(100vh — pt-16)], the calc value is className its self?
-  https://medium.com/@alvinwang627/tailwindcss%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-d51af7fc600a
+==
+
+1.  前期設定Style guide，需要設定config較久，才可以開始layout，之後就可以直接在class寫樣式，如果config沒寫完整，就需要常常回去tailwind.config.js補樣式，其實會滿心累。\
+    (雖然不設定也可以用，但之後維護會比較混亂)
+2.  沒有辦法直接複製貼上網路上、設計稿或開發者工具上的樣式\
+    例如:\
+    1\. 在設計稿上的box-shadow可以直接複製貼上到CSS檔案中，但使用Tailwind就需要重新撰寫，反而會變得比較麻煩。\
+    2\. 在開發者工具上會去layout完，結果沒辦法直接複製貼上到程式碼庫中。
+3.  如果沒有辦法撰寫html，就無法編輯class\
+    例如:\
+    1.用CMS系統，會在特定的狀況下無法去修改CMS的html。當然也可以在css檔案中，去選CMS給的class，其中使用@apply的方式去呼叫tailwind語法出來使用。\
+    2.用一些ui庫或是library也有相同狀況，沒辦法直接修改到某個DOM的class
+4.  樣式複雜，維護性就很差\
+    樣式如果複雜，就會看到class中整坨的tailwind，看了眼睛很累，雖然有自動排序tailwind class的prettier，自己用了是覺得還好。
+5.  沒有辦法註解\
+    例如:之前在撰寫SCSS時，會把某一行的css給註解起來做測試之類的用途。tailwind的話，因為都在html中，註解會把整個html註解起來。
+6.  Vscode extension "Tailwind CSS IntelliSense"，在智能提示框顏色顯示方面只能顯示RGB，無法顯示hex\
+    目前似乎無解。hex的可讀性比較高，我自己使用上也比較習慣，設計稿上用hex也是設計師預設的方式，所以比較難去更改。我通常都要先去style guide介面中，找顏色，再直接複製貼上到class裡面，反而變麻煩很多。\
+    [Color Hex Code in intellisense box #418](https://github.com/tailwindlabs/tailwindcss-intellisense/issues/418)
+7.  nuxt.js中改tailwind.config.js，會需要退出，再重新啟動，才能使用。
+8.  沒辦法在class中使用calc()，需要用其他方式變通。\
+    [is it possible to add min-h-[calc(100vh --- pt-16)], the calc value is className its self?](https://github.com/tailwindlabs/tailwindcss/discussions/11324)
   
 ## Tailwind 是 Utility Framework ，而Bootstrap 則是 UI Framework。
 
@@ -102,6 +105,7 @@ Bootstrap 在客製化的時候，因為需要學習 sass，因此門檻較高�
 ### 2\. 專案的維護成本較高
 
 不論是 sass 的新手或是老手，為了要客製化將 sass 導入，勢必會提高專案的維護成本，比較麻煩。
+
 
 ## 原子类
 
