@@ -70,7 +70,7 @@ Atomic CSS：
 
 JSX 的發展，也是直接破壞掉了以往 JavaScript 跟 HTML 應該要分開的 best practice。
 
-## 那共用元件像是 button 該怎麼辦？難道我要每個地方都改樣式？
+### 那共用元件像是 button 該怎麼辦？難道我要每個地方都改樣式？
 Atomic CSS 的出現並沒有要完全取代傳統 semantic 的做法，正確的做法應該是哪個適合就用哪個。
 
 而官網 FAQ 也有特別提到類似的事情：
@@ -189,7 +189,7 @@ html
 ---
 Tailwind 让你不写样式的方式是把 CSS 用类的形式添加到标签中。它没有封装任何组件样式，一个都没有。它仅仅让你换一种方式添加样式而已。例如 width: 0.25rem 变成了 w-1，background-color: white 变成了 bg-white。它没有一个叫 nav 的样式，让你添加到一个指定结构的 nav 就变成了一个真的 Navbar，没有的。所以它自称是底层 CSS 框架，毕竟它真的就是换了一种方式写 CSS。
 
-
+---
 为什么 2010 年人人喊打的原子类在 2020 年让人大喊真香？归根结底，是时代变了。
 
 在 2010 年，编写 CSS 被认为是在为 HTML 文档进行排版。因此，"内容（HTML）、样式（CSS）、行为（JS）需要分离"这句话，连同着"CSS 代码应当体现 HTML 文档结构/语义"的观念深入人心，以至于刻到那个时代入行的前端工程师的 DNA 里（当然，这些说法在这几年入行的前端工程师看来，基本上属于不知所云的口号）。因此大家一直习惯于：
@@ -202,6 +202,19 @@ Tailwind 让你不写样式的方式是把 CSS 用类的形式添加到标签中
 1.  由于组件化开发模式的推行，已经不存在一个所谓的"文档结构"了（现在只有[组件树结构](https://zhida.zhihu.com/search?content_id=335198028&content_type=Answer&match_order=1&q=%E7%BB%84%E4%BB%B6%E6%A0%91%E7%BB%93%E6%9E%84&zhida_source=entity)，而且你通常不会在乎它），也就是传统流程的第一步早已不复存在
 2.  为了消灭第二、三步， [CSS-in-JS](https://zhida.zhihu.com/search?content_id=335198028&content_type=Answer&match_order=1&q=CSS-in-JS&zhida_source=entity) 开始流行起来
 3.  而 tailwind 这种原子类方案就更激进了，它不但跳过了传统流程的前三步，连第四步都帮你简化了（用一个简短的单词，也就是一个原子类，来代替一个 CSS 语句）
+
+---
+为什么以前总是说样式要和 html 分离，现在却又使用 tailwindCSS 这样的一种形式让样式与 html 紧密的结合在了一起。
+
+造成这种反转的原因是 react，vue ，angular 这些前端技术出现后前端组件化变得非常容易了。
+
+样式分离的目的主要是为了复用和方便维护，但在组件化面前根本就不够打的。
+
+反而像 vue 单文件组件这样的形式 html模板，css ，js 放在一起更方便修改
+
+对于组件的样式而言采用嵌套的 css 选择器结构:.body > .heder {color:red}来设定样式是不如直接在模板内内联样式：<body> <header style={color:red}></header></body> 更方便维护的。
+
+然后内联样式又不如原子类简洁，tailwind 又是原子类的大成者，故我用 tailwind
 
 作者：绅士喵
 链接：https://www.zhihu.com/question/337939566/answer/896450767
