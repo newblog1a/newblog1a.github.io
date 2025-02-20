@@ -3,7 +3,7 @@ published: true
 ---
 tailwind
 
-https://npmtrends.com/bootstrap-vs-tailwindcss
+https://npmtrends.com/bootstrap-vs-sass-vs-tailwindcss
 ![2025-02-21 01_34_14-bootstrap vs tailwindcss _ npm trends - Brave.jpg]({{site.baseurl}}/img/2025-02-21 01_34_14-bootstrap vs tailwindcss _ npm trends - Brave.jpg)
 
 優點
@@ -173,7 +173,7 @@ html
 **一、四种粒度**
 ----------
 
-```
+```html
 <div style="{ borderRadius: '0.5rem', padding: '1rem' }"> Click </div>
 
 <div class="rounded-lg p-4"> Click </div>
