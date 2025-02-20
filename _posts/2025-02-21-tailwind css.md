@@ -186,8 +186,22 @@ html
 
 越往下走，颗粒度越来越大，约束性变高，自由性不足。而 `TailwindCSS` 位于第二层。
 
-
+---
 Tailwind 让你不写样式的方式是把 CSS 用类的形式添加到标签中。它没有封装任何组件样式，一个都没有。它仅仅让你换一种方式添加样式而已。例如 width: 0.25rem 变成了 w-1，background-color: white 变成了 bg-white。它没有一个叫 nav 的样式，让你添加到一个指定结构的 nav 就变成了一个真的 Navbar，没有的。所以它自称是底层 CSS 框架，毕竟它真的就是换了一种方式写 CSS。
+
+
+为什么 2010 年人人喊打的原子类在 2020 年让人大喊真香？归根结底，是时代变了。
+
+在 2010 年，编写 CSS 被认为是在为 HTML 文档进行排版。因此，"内容（HTML）、样式（CSS）、行为（JS）需要分离"这句话，连同着"CSS 代码应当体现 HTML 文档结构/语义"的观念深入人心，以至于刻到那个时代入行的前端工程师的 DNA 里（当然，这些说法在这几年入行的前端工程师看来，基本上属于不知所云的口号）。因此大家一直习惯于：
+
+-   为 HTML 文档里的一些元素起一些所谓"能反映它在文档里的角色/语义"的类名 / ID（例如 header、sidebar、menu、navbar 等等，甚至发明出 [BEM](https://zhida.zhihu.com/search?content_id=335198028&content_type=Answer&match_order=1&q=BEM&zhida_source=entity) 之类的"命名规范"），然后用类选择器或 ID 选择器来选中它们
+-   偶尔搭配使用那些依赖于文档结构的 CSS 选择器（后代选择器、子选择器、兄弟选择器等等）
+
+但是，在 2020 年，没有人还会认为自己在编写 HTML 文档，或者说，认为自己的 HTML 是所谓的"内容"。HTML 实际上是类似于 GUI 像素 / 控件一类的东西，是组件的渲染产物。对于这种"渲染产物"，大家需要的是能够方便地指定其外观的方案，而不愿意再走" 纵览文档结构 -> 为元素起名字 -> 用选择器选中 -> 写 CSS 语句"这套传统流程：
+
+1.  由于组件化开发模式的推行，已经不存在一个所谓的"文档结构"了（现在只有[组件树结构](https://zhida.zhihu.com/search?content_id=335198028&content_type=Answer&match_order=1&q=%E7%BB%84%E4%BB%B6%E6%A0%91%E7%BB%93%E6%9E%84&zhida_source=entity)，而且你通常不会在乎它），也就是传统流程的第一步早已不复存在
+2.  为了消灭第二、三步， [CSS-in-JS](https://zhida.zhihu.com/search?content_id=335198028&content_type=Answer&match_order=1&q=CSS-in-JS&zhida_source=entity) 开始流行起来
+3.  而 tailwind 这种原子类方案就更激进了，它不但跳过了传统流程的前三步，连第四步都帮你简化了（用一个简短的单词，也就是一个原子类，来代替一个 CSS 语句）
 
 作者：绅士喵
 链接：https://www.zhihu.com/question/337939566/answer/896450767
