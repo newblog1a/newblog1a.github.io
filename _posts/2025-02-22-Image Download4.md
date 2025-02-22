@@ -340,3 +340,167 @@ document.addEventListener('mouseover', (e) => {
 -   測試：在 Twitter 上測試時，滾動到底部並等待新內容載入，確認圖標是否仍能正確顯示。
 
 如果還有其他問題或需要進一步協助，請提供更多細節（例如完整的程式碼或失效時的具體行為），我會幫你調整！
+
+---
+
+你的程式碼整體運作良好，但你提到了一個問題：有時圖標（icon）會卡在某個圖片上不消失。這個問題可能與 mouseout 事件的觸發條件或邏輯有關。我檢查了你的程式碼，發現以下幾個可能的原因及解決方案：
+
+* * * * *
+
+問題分析
+
+1.  mouseout 事件的條件問題：
+
+    -   你在 mouseout 事件中檢查了 e.target === currentImg && e.relatedTarget !== icon，這意味著只有當滑鼠從 currentImg 移出且移到的目標不是 icon 時，才會隱藏圖標。
+
+    -   如果滑鼠移動到一個不符合條件的元素（例如某些覆蓋層、子元素或非預期的目標），icon 不會隱藏，就會出現「卡住」的情況。
+
+2.  動態內容影響：
+
+    -   在 Twitter 或其他動態網站上，圖片可能會因為頁面滾動或重新渲染而改變位置或結構，這可能導致 currentImg 的參考失效，或者 mouseout 事件未正確觸發。
+
+3.  iconVisible 狀態未正確重置：
+
+    -   如果某些情況下 iconVisible 沒有被設為 false，下次滑鼠移入新圖片時，handleImageHover 的條件 !iconVisible 會阻止圖標更新位置。
+
+* * * * *
+
+解決方案
+
+以下是修復「圖標卡住」問題的改進版本程式碼，並針對 Twitter 的無限滾動問題使用事件委派：
+
+javascript
+
+```
+// ==UserScript==
+// @name         Image Download4
+// @namespace    http://tampermonkey.net/
+// @version      1.3
+// @description  Add a download icon to images larger than 400px when hovered.
+// @author       Your Name
+// @match        *://*/*
+// @run-at       document-idle
+// @grant        GM_download
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Create the download icon
+    const icon = document.createElement('div');
+    icon.textContent = '\u2B73'; // A simple arrow icon
+    icon.style.position = 'absolute';
+    icon.style.width = '24px';
+    icon.style.height = '24px';
+    icon.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+    icon.style.color = 'white';
+    icon.style.fontSize = '18px';
+    icon.style.textAlign = 'center';
+    icon.style.lineHeight = '24px';
+    icon.style.borderRadius = '50%';
+    icon.style.cursor = 'pointer';
+    icon.style.display = 'none';
+    icon.style.zIndex = '10000';
+    document.body.appendChild(icon);
+
+    let currentImg = null;
+    let iconVisible = false;
+
+    // Function to check image size
+    function isLargeImage(img) {
+        return img.naturalWidth > 400 && img.naturalHeight > 400;
+    }
+
+    // Get document coordinates of the element
+    function getCoords(elem) {
+        let box = elem.getBoundingClientRect();
+        return {
+            top: box.top + window.pageYOffset,
+            right: box.right + window.pageXOffset,
+            bottom: box.bottom + window.pageYOffset,
+            left: box.left + window.pageXOffset
+        };
+    }
+
+    function handleImageHover(img) {
+        if (img.tagName === 'IMG' && isLargeImage(img)) {
+            // 如果已有圖標顯示，先隱藏並重置
+            if (iconVisible && currentImg !== img) {
+                icon.style.display = 'none';
+                iconVisible = false;
+            }
+
+            if (!iconVisible) {
+                let position = getCoords(img);
+                icon.style.left = `${position.left + 24}px`;
+                icon.style.top = `${position.bottom - 24}px`;
+                icon.style.display = 'block';
+                currentImg = img;
+                iconVisible = true;
+            }
+        }
+    }
+
+    // Hide icon when leaving image or icon
+    function hideIconIfNeeded(e) {
+        const fromElement = e.target;
+        const toElement = e.relatedTarget;
+
+        // 如果離開的是當前圖片或圖標，且目標不再是圖片或圖標
+        if ((fromElement === currentImg || fromElement === icon) &&
+            toElement !== icon && toElement !== currentImg) {
+            icon.style.display = 'none';
+            currentImg = null;
+            iconVisible = false;
+        }
+    }
+
+    // Mouseover event delegation
+    document.addEventListener('mouseover', (e) => {
+        const img = e.target;
+        handleImageHover(img);
+    });
+
+    // Mouseout event delegation
+    document.addEventListener('mouseout', (e) => {
+        hideIconIfNeeded(e);
+    });
+
+    // Handle navigation (URL change) for Twitter compatibility
+    window.navigation?.addEventListener("navigate", (e) => {
+        const img = e.target;
+        handleImageHover(img);
+    });
+
+    // Download image on icon click
+    icon.addEventListener('click', () => {
+        if (currentImg) {
+            const imageUrl = currentImg.src;
+            const fileName = imageUrl.split('/').pop().split('?')[0];
+            GM_download(imageUrl, fileName + '.jpg');
+        }
+    });
+})();
+```
+
+* * * * *
+
+改進點
+
+1.  修復圖標卡住問題：
+
+    -   在 handleImageHover 中，新增了檢查：如果已有圖標顯示且當前圖片不是新目標圖片，先隱藏圖標並重置狀態。
+
+    -   在 mouseout 事件中，改進了隱藏邏輯，檢查是否從圖片或圖標移出，並確保目標不再是圖片或圖標時才隱藏。
+
+2.  事件委派：
+
+    -   使用 document.addEventListener('mouseover', ...) 和 document.addEventListener('mouseout', ...) 處理所有圖片的事件，即使 Twitter 動態載入新內容也能正常運作。
+
+3.  移除無用函數：
+
+    -   移除了未使用的 getPosition 函數，保持程式碼簡潔。
+
+4.  Twitter 兼容性：
+
+    -   保留了 navigate 事件的處理，並添加了可選鏈運算符 ?. 以防止某些瀏覽器不支持 window.navigation 時報錯。
