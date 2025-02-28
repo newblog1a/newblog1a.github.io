@@ -1,6 +1,24 @@
 ---
 published: true
 ---
+## Exception to `set -e` in bash
+
+```sh
+set +e
+# your command which would fail
+set -e
+
+```
+
+or
+
+```sh
+your_command_which_would_fail || true
+```
+https://stackoverflow.com/questions/48079029/exception-to-set-e-in-bash
+
+---
+
 # cd - 解析
 
 #### You:
@@ -114,7 +132,6 @@ To view keyboard shortcuts, press question mark
 View keyboard shortcuts
 --------------------------------------------------------------------------
 
-![johnke](https://pbs.twimg.com/profile_images/1380483120512688129/SQToyr5M_bigger.jpg)
 
 Grok 3
 
@@ -547,8 +564,3 @@ find "$CONTENT_DIR" -type f \( -name "*.htm" -o -name "*.html" \) -printf "%P\0"
 
 With this change, your error handling is both effective and meaningful, working harmoniously with set -e and set -o pipefail to ensure a robust build script.
 
-DeepSearch
-
-Think
-
-Attach
