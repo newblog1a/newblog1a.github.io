@@ -1,11 +1,13 @@
 ---
 published: true
 ---
+```
 → erisiss0: 真空機不挑袋的都很破，因為抽真空是需要特定軟度和壓 05/15 21:53
 → erisiss0: 花才能提高效率 不挑袋的多半效果不佳 05/15 21:53
   https://www.ptt.cc/bbs/cookclub/M.1684131086.A.7AD.html
 → pikalu: 不過格紋袋不好處理液體是事實 我多半封肉類 所以還好 微 03/20 23:41
 → pikalu: 濕的肉品我會一起封廚房紙巾進去 03/20 23:41
+```
   https://www.ptt.cc/bbs/cookclub/M.1647786216.A.80A.html
   
 1.抽真空一定要用真空袋嗎？
