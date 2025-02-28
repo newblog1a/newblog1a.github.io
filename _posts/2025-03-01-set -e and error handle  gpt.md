@@ -87,6 +87,8 @@ cd - >/dev/null || error "Cannot return to previous directory"
 
 **`set -o pipefail` 不會影響這段程式碼的行為**，如果 `cd - >/dev/null` 失敗，`||` 右側的錯誤處理仍然會執行。
 
+---
+# wrong !!!
 
 #### You:
 那set -e呢
