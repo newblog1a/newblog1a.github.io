@@ -50,7 +50,7 @@ A：兩者在抽氣上原理不同，也導致優缺點不同。
 無吸嘴真空包裝機
   https://www.jiachi.com.tw/how-does-vaccum-packaging-machine-preserve-food
   
-真空袋主要材質為尼龍（NYLON)+低密度聚乙烯（LDPE),能夠有效阻絕氣體。
+真空袋主要材質為`尼龍（NYLON)+低密度聚乙烯（LDPE)`,能夠有效阻絕氣體。
 一般塑膠袋為PE材質,無法杜絕空氣進入;
 
 再來就是真空機(我的是商用級腔式的)給我的震撼，東西放裏面，不論冷藏或是冷凍，損耗都很慢。
