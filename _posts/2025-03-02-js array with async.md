@@ -90,3 +90,11 @@ processArray();
 
 上手使用 JavaScript 的 Map、Reduce 吧！
   https://fred-zone.blogspot.com/2017/01/javascript-mapreduce.html
+
+
+所有的结果都清楚地表明 for 循环比 map / reduce / filter / find 更加快。
+
+JavaScript性能测试-比较for/forEach/map/reduce/filter
+  https://blog.csdn.net/m0_49039063/article/details/132431081
+for 和 filter 的效率哪个更高？
+  https://blog.csdn.net/HYeeee/article/details/110531288
