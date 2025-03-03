@@ -4,6 +4,7 @@ published: true
 
 How do I use floating-point arithmetic in bash?
   https://stackoverflow.com/questions/12722095/how-do-i-use-floating-point-arithmetic-in-bash
+  https://unix.stackexchange.com/questions/412716/can-bash-do-floating-point-arithmetic-without-using-an-external-command
   
 You can't. bash *only* does integers; you *must* delegate to a tool such as `bc`.
 
