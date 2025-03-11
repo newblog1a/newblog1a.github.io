@@ -203,6 +203,13 @@ prose:
           element: "checkbox"
           label: "published"
           value: "true"
+      - name: "tag"
+        field:
+          element: "text"
+          label: "TAG"
+          help: "[apple, guava, watermelon]"
+          value: "["
+          type: text
 
 jekyll-archives:
   enabled: [categories, tags]
