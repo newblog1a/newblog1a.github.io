@@ -208,7 +208,6 @@ prose:
           element: "text"
           label: "TAG"
           help: "[apple, guava, watermelon]"
-          value: "["
           type: text
 
 jekyll-archives:
