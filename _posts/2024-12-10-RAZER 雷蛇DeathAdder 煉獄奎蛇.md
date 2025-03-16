@@ -63,6 +63,13 @@ RAZER現在主要賣點就是光學鍵，所有Essential級都沒有光學鍵通
 因為P/N碼(品名編號)、S/N碼(產品編號)都直接印在外盒了。
   https://home.gamer.com.tw/creationDetail.php?sn=5372526
   #原廠報修從海外寄來
+  
+2023-04-25
+Deathadder Essential 市價488
+這支規格差不多是2013版的規格
+類似2013，實際上costdown很兇比DA 2013還不耐操(當時還要2千台幣)
+4隻全部保固內滾輪出問題
+  https://forum.gamer.com.tw/C.php?bsn=60030&snA=623624
 
 ---
 
