@@ -23,3 +23,8 @@ imagemin，它是一款可以集成多个压缩库的工具，支持jpg，png，
 Sharp vs Imagemin for Image Minification in Node.js
   https://blockqueue.io/blog/2024-09-22-sharp-vs-imagemin-comparison
   3mb.jpg Time Taken (Sharp) 6.38s;	Imagemin 9.31s
+
+sharp
+Resizing an image is typically 4x-5x faster than using the quickest ImageMagick and GraphicsMagick settings due to its use of libvips.
+  https://www.npmjs.com/package/sharp
+  https://www.npmjs.com/package/sharp-cli
