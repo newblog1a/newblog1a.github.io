@@ -19,6 +19,8 @@ published: true
 
 ---
 
+## v1
+
 ```js
 // ==UserScript==
 // @name         Dynamic Node Watcher
@@ -75,4 +77,46 @@ published: true
     document.addEventListener('DOMContentLoaded', startObserving);
 
 })();
+```
+
+---
+
+v2
+
+用MutationObserver監控網頁。
+若發現節點加入shadow root，1.將其也加入監控。2.執行c。
+c: 對shadow root內部掃描，檢查是否節點有留言版。
+
+```js
+function ccc(node) {
+    console.log("Processing node:", node);
+    // 在這裡執行你的 ccc() 處理邏輯
+}
+
+function observeShadowRoot(shadowRoot) {
+	ccc(node);
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                if (node.shadowRoot) {
+                    observeShadowRoot(node.shadowRoot);
+                }
+            });
+        });
+    });
+    observer.observe(shadowRoot, { childList: true, subtree: true });
+}
+
+const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+            ccc(node);
+            if (node.shadowRoot) {
+                observeShadowRoot(node.shadowRoot);
+            }
+        });
+    });
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
 ```
