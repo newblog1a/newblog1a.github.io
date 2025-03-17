@@ -63,6 +63,8 @@ observer.disconnect();
 
   https://medium.com/@alexian853/mutationobserver-dom-%E5%AE%87%E5%AE%99%E7%9A%84%E8%A7%80%E5%AF%9F%E8%80%85-3c2e8d503b1c
   
+如果 **只有** `subtree: true`，但沒有 `childList: true`，則**不會監聽子節點的新增或刪除**，因為 `subtree` 只是擴展範圍，不是監聽行為本身。
+  
 ## monitor new node
 
 ```js
