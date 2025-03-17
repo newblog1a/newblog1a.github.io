@@ -94,7 +94,7 @@ function ccc(node) {
 }
 
 function observeShadowRoot(shadowRoot) {
-	ccc(node);
+	ccc(shadowRoot); //shadowRoot.host or shadowRoot ???
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             mutation.addedNodes.forEach(node => {
