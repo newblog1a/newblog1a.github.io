@@ -79,9 +79,9 @@ published: true
 })();
 ```
 
----
+===
 
-v2
+## v2
 
 用MutationObserver監控網頁。
 若發現節點加入shadow root，1.將其也加入監控。2.執行c。
@@ -120,3 +120,55 @@ const observer = new MutationObserver(mutations => {
 
 observer.observe(document.body, { childList: true, subtree: true });
 ```
+
+===
+
+## V3
+
+You:
+用IntersectionObserver。
+當Viewpoint接觸 <bili-checked> 時，執行ccc()。
+<bili-checked> 在 shadow root裡面。
+
+ChatGPT:
+`IntersectionObserver` 無法直接觀察 Shadow DOM 內的元素，但你可以觀察包含 `<bili-checked>` 的 shadow host（即擁有 shadow root 的元素），當它進入視口時，再透過 `shadowRoot.querySelector()` 找到 `<bili-checked>`，並執行 `ccc()`。
+
+## 解法：
+
+1. 找到 shadow host：假設 `<bili-checked>` 存在於某個 `custom-element` 內部（例如 `<bili-wrapper>`）。
+2. 監聽 shadow host：使用 `IntersectionObserver` 觀察 `<bili-wrapper>` 是否進入視口。
+3. 從 shadow root 獲取 `<bili-checked>`：當 `<bili-wrapper>` 進入視口後，透過 `shadowRoot.querySelector("bili-checked")` 取得 `<bili-checked>`，並執行 `ccc()`。
+
+---
+
+### 範例程式：
+
+```javascript
+// 假設 <bili-checked> 在 <bili-wrapper> 內的 shadow DOM 裡
+const wrapper = document.querySelector("bili-wrapper");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // 進入視口時，從 shadow root 取出 <bili-checked>
+            const shadowRoot = wrapper.shadowRoot;
+            if (shadowRoot) {
+                const biliChecked = shadowRoot.querySelector("bili-checked");
+                if (biliChecked) {
+                    ccc();
+                }
+            }
+        }
+    });
+}, { threshold: 0.5 });  // threshold 設 0.5 表示 50% 可見時觸發
+
+observer.observe(wrapper);
+```
+
+---
+
+### 注意：
+
+- `bili-wrapper` 必須是 `custom element`，且它的 `shadowRoot` 需設為 `open`（否則 `shadowRoot` 會是 `null`）。
+- `threshold: 0.5` 表示當 `bili-wrapper` 50% 進入視口時觸發，你可根據需求調整數值。
+- 若 `bili-checked` 在 `shadowRoot` 延遲加載，可能需要 `MutationObserver` 監聽變化。
