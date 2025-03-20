@@ -538,6 +538,8 @@ if __name__ == "__main__":
 分類頁面加入分頁功能
 分類頁面 底下的 回到首頁 消失
 
+ps. Pagination把資料分成一頁一頁，下方有頁數或是indicator可以點擊換頁
+
 ```py
 import os
 import shutil
