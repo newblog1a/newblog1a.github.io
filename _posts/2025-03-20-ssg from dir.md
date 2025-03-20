@@ -540,8 +540,6 @@ if __name__ == "__main__":
 
 ps. Pagination把資料分成一頁一頁，下方有頁數或是indicator可以點擊換頁
 
-
-error:
 ```py
 import os
 import shutil
@@ -622,12 +620,40 @@ def main():
 templates_dir = 'templates'
 os.makedirs(templates_dir, exist_ok=True)
 
+index_html = """
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+        .gallery img { width: 100%; height: auto; border-radius: 5px; transition: transform 0.2s; }
+        .gallery img:hover { transform: scale(1.05); }
+        .category { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>作品集</h1>
+    <div class="gallery">
+        {% for category, images in categories.items() %}
+        <div class="category">
+            <h2><a href="{{ category.replace('/', '_') }}_1.html">{{ category }}</a></h2>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+"""
+
 category_html = """
 <!DOCTYPE html>
-<html lang=\"zh\">
+<html lang="zh">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ category }}</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
@@ -640,7 +666,7 @@ category_html = """
 </head>
 <body>
     <h1>{{ category }}</h1>
-    <div class=\"gallery\">
+    <div class="gallery">
         {% for img_name, img_path in images %}
         <div>
             <a href=\"image_{{ img_name }}.html\">
@@ -663,8 +689,34 @@ category_html = """
 </html>
 """
 
+image_html = """
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ img_name }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>{{ img_name }}</h1>
+    <img src="images/{{ img_path }}" alt="{{ img_name }}">
+    <p>分類: <a href="{{ category.replace('/', '_') }}.html">{{ category }}</a></p>
+    <a href="index.html">回首頁</a>
+</body>
+</html>
+"""
+
+with open(os.path.join(templates_dir, 'index.html'), 'w', encoding='utf-8') as f:
+    f.write(index_html)
+
 with open(os.path.join(templates_dir, 'category.html'), 'w', encoding='utf-8') as f:
     f.write(category_html)
+
+with open(os.path.join(templates_dir, 'image.html'), 'w', encoding='utf-8') as f:
+    f.write(image_html)
 
 if __name__ == "__main__":
     main()
