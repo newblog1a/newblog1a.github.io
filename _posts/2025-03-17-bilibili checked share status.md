@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-‵```html
+```html
 <bili-checkbox value="sync" label="同时转发到我的动态" checked="false"></bili-checkbox>
   <input type="checkbox" value="sync">
   
