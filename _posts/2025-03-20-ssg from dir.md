@@ -356,3 +356,177 @@ with open(os.path.join(templates_dir, 'category.html'), 'w', encoding='utf-8') a
 if __name__ == "__main__":
     main()
 ```
+
+---
+
+## v4
+
+首頁縮圖不見。
+每個圖檔都有獨立頁面。
+
+```py
+import os
+import shutil
+from pathlib import Path
+from jinja2 import Environment, FileSystemLoader
+from PIL import Image
+
+def create_thumbnail(image_path, thumb_path, size=(300, 300)):
+    with Image.open(image_path) as img:
+        img.thumbnail(size)
+        img.save(thumb_path)
+
+def scan_images(base_dir):
+    image_data = {}
+    for root, _, files in os.walk(base_dir):
+        rel_path = os.path.relpath(root, base_dir)
+        category = rel_path.replace(os.sep, '/')
+        if category == '.':
+            category = '未分類'
+        image_files = [f for f in files if f.lower().endswith(('jpg', 'jpeg', 'png'))]
+        if image_files:
+            image_data[category] = [(f, os.path.join(rel_path, f)) for f in image_files]
+    return image_data
+
+def generate_html(image_data, output_dir):
+    env = Environment(loader=FileSystemLoader(os.path.abspath('templates')))
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Generate index.html
+    template = env.get_template('index.html')
+    with open(os.path.join(output_dir, 'index.html'), 'w', encoding='utf-8') as f:
+        f.write(template.render(categories=image_data))
+    
+    # Generate category pages
+    category_template = env.get_template('category.html')
+    image_template = env.get_template('image.html')
+    for category, images in image_data.items():
+        category_path = os.path.join(output_dir, category.replace('/', '_') + '.html')
+        with open(category_path, 'w', encoding='utf-8') as f:
+            f.write(category_template.render(category=category, images=images))
+        
+        # Generate individual image pages
+        for img_name, img_path in images:
+            img_page_path = os.path.join(output_dir, 'image_' + img_name + '.html')
+            with open(img_page_path, 'w', encoding='utf-8') as f:
+                f.write(image_template.render(img_name=img_name, img_path=img_path, category=category))
+
+def copy_images(image_data, src_dir, dst_dir):
+    os.makedirs(dst_dir, exist_ok=True)
+    for category, images in image_data.items():
+        for img_name, img_path in images:
+            src_path = os.path.join(src_dir, img_path)
+            dst_path = os.path.join(dst_dir, img_path)
+            os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+            shutil.copy2(src_path, dst_path)
+            # Create thumbnail
+            thumb_path = os.path.join(dst_dir, 'thumbs', img_path)
+            os.makedirs(os.path.dirname(thumb_path), exist_ok=True)
+            create_thumbnail(src_path, thumb_path)
+
+def main():
+    os.makedirs('templates', exist_ok=True)
+    source_dir = 'pic'
+    output_dir = 'site'
+    static_img_dir = os.path.join(output_dir, 'images')
+    
+    image_data = scan_images(source_dir)
+    copy_images(image_data, source_dir, static_img_dir)
+    generate_html(image_data, output_dir)
+    print("Site generated successfully!")
+
+# Templates (Jinja2)
+templates_dir = 'templates'
+os.makedirs(templates_dir, exist_ok=True)
+
+index_html = """
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+        .gallery img { width: 100%; height: auto; border-radius: 5px; transition: transform 0.2s; }
+        .gallery img:hover { transform: scale(1.05); }
+        .category { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>作品集</h1>
+    <div class="gallery">
+        {% for category, images in categories.items() %}
+        <div class="category">
+            <h2><a href="{{ category.replace('/', '_') }}.html">{{ category }}</a></h2>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+"""
+
+category_html = """
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+        .gallery img { width: 100%; height: auto; border-radius: 5px; transition: transform 0.2s; }
+        .gallery img:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <h1>{{ category }}</h1>
+    <div class="gallery">
+        {% for img_name, img_path in images %}
+        <div>
+            <a href="image_{{ img_name }}.html">
+                <img src="images/{{ img_path }}" alt="{{ img_name }}">
+            </a>
+            <p>{{ img_name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="index.html">回首頁</a>
+</body>
+</html>
+"""
+
+image_html = """
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ img_name }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>{{ img_name }}</h1>
+    <img src="images/{{ img_path }}" alt="{{ img_name }}">
+    <p>分類: <a href="{{ category.replace('/', '_') }}.html">{{ category }}</a></p>
+    <a href="index.html">回首頁</a>
+</body>
+</html>
+"""
+
+with open(os.path.join(templates_dir, 'index.html'), 'w', encoding='utf-8') as f:
+    f.write(index_html)
+
+with open(os.path.join(templates_dir, 'category.html'), 'w', encoding='utf-8') as f:
+    f.write(category_html)
+
+with open(os.path.join(templates_dir, 'image.html'), 'w', encoding='utf-8') as f:
+    f.write(image_html)
+
+if __name__ == "__main__":
+    main()
+```
