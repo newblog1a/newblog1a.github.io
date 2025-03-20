@@ -721,3 +721,42 @@ with open(os.path.join(templates_dir, 'image.html'), 'w', encoding='utf-8') as f
 if __name__ == "__main__":
     main()
 ```
+
+## v6
+
+分類頁面、圖片詳細頁面都要加上Breadcrumb。 Breadcrumb 要超連結讓使用者可以點擊
+
+###### ChatGPT said:
+
+你可以在 `category.html` 和 `image.html` 中加入 Breadcrumb。  
+這樣的 Breadcrumb 結構會像這樣：
+
+-   **分類頁面**：`首頁 > [分類名稱]`
+-   **圖片詳細頁面**：`首頁 > [分類名稱] > [圖片名稱]`
+
+### 修改 `category.html`
+
+在 `<body>` 內加上：
+
+```jinja2
+<div class="breadcrumb">     <a href="index.html">首頁</a> > {{ category }} </div>
+```
+
+### 修改 `image.html`
+
+在 `<body>` 內加上：
+
+```jinja2
+<div class="breadcrumb">     <a href="index.html">首頁</a> >     <a href="{{ category.replace('/', '_') }}_1.html">{{ category }}</a> >     {{ img_name }} </div>
+```
+
+### 加上 CSS 樣式
+
+可以在 `category.html` 和 `image.html` 的 `<style>` 內加：
+
+```css
+.breadcrumb {     text-align: left;     margin-bottom: 10px;     font-size: 14px; } .breadcrumb a {     text-decoration: none;     color: #007bff; } .breadcrumb a:hover {     text-decoration: underline; }
+```
+
+這樣 Breadcrumb 會出現在網頁上方，並且使用者可以點擊返回分類或首頁。
+
