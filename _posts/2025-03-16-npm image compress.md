@@ -54,3 +54,10 @@ https://github.com/XhmikosR/jpegoptim-windows
 
 https://mozjpeg.codelove.de/binaries.html
 2022
+
+Caesium Image Compressor
+  https://saerasoft.com/caesium
+  https://github.com/Lymphatus/caesium-clt
+npm ...
+pngquant is a command-line utility and a library for lossy compression of PNG images.
+  https://pngquant.org/
