@@ -55,6 +55,8 @@ https://github.com/XhmikosR/jpegoptim-windows
 https://mozjpeg.codelove.de/binaries.html
 2022
 
+scoop install main/jpegoptim
+
 Caesium Image Compressor
   https://saerasoft.com/caesium
   https://github.com/Lymphatus/caesium-clt
