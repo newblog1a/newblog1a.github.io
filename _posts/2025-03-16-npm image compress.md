@@ -28,3 +28,29 @@ sharp
 Resizing an image is typically 4x-5x faster than using the quickest ImageMagick and GraphicsMagick settings due to its use of libvips.
   https://www.npmjs.com/package/sharp
   https://www.npmjs.com/package/sharp-cli
+
+---
+
+# CLI
+
+![2025-03-22 04_57_43-Github Compare - Brave.jpg]({{site.baseurl}}/img/2025-03-22 04_57_43-Github Compare - Brave.jpg)
+
+https://www.githubcompare.com/tjko/jpegoptim+kud/jpegrescan+mozilla/mozjpeg
+
+jpegoptim vs jpegtran vs mozjpeg
+  https://stackoverflow.com/questions/36046782/jpegoptim-vs-jpegtran-vs-mozjpeg
+
+```
+# [python脚本使用mozjpeg批量压缩图片](https://www.cnblogs.com/ZerlinM/p/18615026 "发布于 2024-12-18 15:12")
+
+安装mozjpeg
+
+    npm install mozjpeg -g
+```
+
+## Windows
+https://github.com/XhmikosR/jpegoptim-windows
+2023
+
+https://mozjpeg.codelove.de/binaries.html
+2022
