@@ -63,3 +63,23 @@ Caesium Image Compressor
 npm ...
 pngquant is a command-line utility and a library for lossy compression of PNG images.
   https://pngquant.org/
+
+# mozjpeg
+
+jpegtran optimize without changing filename
+  jpegtran -copy none -optimize -outfile image.jpg image.jpg
+  https://stackoverflow.com/questions/5579183/jpegtran-optimize-without-changing-filename
+  
+Q: Same output and input
+No, cjpeg doesn't support that.
+  https://github.com/mozilla/mozjpeg/issues/248
+  
+Q: Using `jpegtran` and `mozjpeg` together give some confusing
+There is no `mozjpeg` command. This project ships `cjpeg` and `jpegtran`. Are you using a 3rd party tool that wraps them or renames them?
+  https://github.com/mozilla/mozjpeg/issues/229
+  
+mozjpeg/usage.txt
+  https://github.com/mozilla/mozjpeg/blob/master/usage.txt
+  
+$ cjpeg -quality 80 foo.bmp > bar.jpg
+  https://hacks.mozilla.org/2014/08/using-mozjpeg-to-create-efficient-jpegs/
