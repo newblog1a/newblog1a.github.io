@@ -31,7 +31,7 @@ Resizing an image is typically 4x-5x faster than using the quickest ImageMagick 
 
 ---
 
-# CLI
+## CLI
 
 ![2025-03-22 04_57_43-Github Compare - Brave.jpg]({{site.baseurl}}/img/2025-03-22 04_57_43-Github Compare - Brave.jpg)
 
@@ -64,7 +64,7 @@ npm ...
 pngquant is a command-line utility and a library for lossy compression of PNG images.
   https://pngquant.org/
 
-# mozjpeg
+## mozjpeg
 
 jpegtran optimize without changing filename
   jpegtran -copy none -optimize -outfile image.jpg image.jpg
