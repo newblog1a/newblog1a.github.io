@@ -83,3 +83,27 @@ mozjpeg/usage.txt
   
 $ cjpeg -quality 80 foo.bmp > bar.jpg
   https://hacks.mozilla.org/2014/08/using-mozjpeg-to-create-efficient-jpegs/
+  
+## webp
+
+original files: 153MB
+
+```py
+subprocess.run(["jpegoptim", "--strip-all", "--max=85", file_path])
+```
+63.6MB
+
+
+```py
+subprocess.run(["jpegtran", "-optimize", "-progressive", "-copy", "none", "-outfile", file_path, file_path])
+```
+install mozjpeg from scoop
+file size: 66.6MB
+
+
+```py
+from PIL import Image               # import the PIL.Image module
+img = Image.open("image.webp")      # open your image
+img.save("image2.webp", quality=70) # save the image with the given quality
+```
+37.7MB
