@@ -107,3 +107,6 @@ img = Image.open("image.webp")      # open your image
 img.save("image2.webp", quality=70) # save the image with the given quality
 ```
 37.7MB
+  https://wenchen1997.com/blog/python/images-to-webp
+  https://wenchen1997.com/blog/webp-test
+  https://stackoverflow.com/questions/63225613/is-there-a-way-to-set-image-quality-for-webp-images-in-python
