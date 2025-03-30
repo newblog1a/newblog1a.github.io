@@ -1,0 +1,73 @@
+---
+published: true
+---
+# 你真的会用 npx 吗
+
+没有 npx 命令前
+----------
+
+在没有 `npx` 命令之前，我们想要执行项目中安装的可执行脚本，以安装 React 创建项目的脚手架 `create-react-app` 为例，通常使用下面的做法：
+
+做法一，使用全局安装然后再创建项目：
+
+```
+npm install create-react-app -g
+
+create-react-app test-react
+
+```
+
+> 缺点
+>
+> 1.  `create-react-app` 安装项目本身是一个低频次操作，全局安装不具备必要性，同时如果其它低频次工具也全局安装，势必会造成全局 path 混乱和冗余。
+> 2.  npm 生态系统越来越倾向于将工具安装为项目本地 `devDependencies` ，让每个项目独立管理工具的版本，而不是都是用全局安装的固定版本。
+
+做法二，不全局安装，需要先进入脚手架目录，再调用这个命令：
+
+```
+npm install create-react-app -D
+
+cd node-modules/.bin/
+
+create-react-app test-react
+
+```
+
+或者将 `create-react-app` 命令添加到 `package.json` 的 `scripts`中
+
+> 缺点
+>
+> 这样做每个项目可以安装不同的脚手架版本，但操作还是略微繁琐，同时每个项目都安装一遍脚手架工具也是不必要的。
+
+npx 就是为了解决这些问题，下面我们来了解一下。
+
+npx 基本用法
+--------
+
+了解基本用法之前，我们先看看 npx 的安装。
+
+### 安装
+
+在安装完 node 以及 npm 后，会默认安装 npm 相同版本号的 npx 工具，当然也可以独立安装：
+
+```
+npm install -g npx
+
+```
+
+### 执行命令
+
+```
+npx create-react-app
+
+```
+
+使用 npx 执行一个工具非常简单，不需要提前安装 `create-react-app` ，直接使用 npx 就可以执行这个工具，这源于 npx 的查找流程：
+
+1.  先自动查找当前项目依赖包中的可执行文件，也就是 `node-modules/.bin/`；
+2.  如果找不到，就会去全局 `$PATH` 中查找，所以全局安装的包不会重复安装；
+3.  如果依然找不到，就会帮你临时安装，执行完命令后再删除包。
+
+拥有 npx 后，当我们开发一个命令，就不用让用户先安装再使用了，给用户添加负担。👌
+
+ref https://www.cnblogs.com/easy1996/p/17961310
