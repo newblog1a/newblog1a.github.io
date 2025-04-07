@@ -63,6 +63,9 @@ TPA6120 #放大器
 只有接耳机的时候调节旋钮才起作用.
 音箱和耳机切换时候要断开连接, 不带自动切换
 o此款机子不可以直接接U盘目前市场上手机皇不具琶光纤同轴输出的所以用3.5转光纤或同轴连接到解码器皇没有音步页输出的
+
+电脑系统音量是不能调节音量大小的，只能直接静音。
+接电脑时候系统音量是不能调节的, 因为这用的是数字信号， 不建议用这里来调音量，会导致有噪音的, 可以调节您功放的音量或者播放器的音量。
   https://item.taobao.com/item.htm?abbucket=14&detail_redpacket_pop=true&id=753828684608&mi_id=scDMiO4t2anNrTWwYnZnBQrCwu3Ww6rjEtBBgUnRO6HCwNcgwaQ8jAIMMfHl5-mP1CxzDQhds77zTl_ZOG7ypuZUaUe9VlSjn1mE-6cBFbE
   
 ### 飞想DAC-X6 MKII蓝牙5.0解码耳放DAC发烧HIFI无损ES9018 OPA2134
@@ -202,4 +205,3 @@ QCC3008+ESS9018+OPA2134+TPA6120+OP275+CM6642+STM8
 4.  最後由 **TPA6120** 高功率放大輸出至耳機 →
     
 5.  **STM8** 控制整體流程與使用者介面（按鈕、LED 等）
-
