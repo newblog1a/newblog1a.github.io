@@ -14,6 +14,10 @@ https://www.microsoft.com/store/productId/9MVZQVXJBQ9V
 **直接安裝 .AppxBundle，不要解壓縮成.appx**
 `Microsoft.AV1VideoExtension_2.0.7.0_neutral_~_8wekyb3d8bbwe.AppxBundle`
 
+```ps
+Add-AppxPackage -Path <appname>
+```
+
 grok:
 ```md
 當你**直接用 Add-AppxPackage 安裝 .appxbundle** 時，Windows 的 Appx 安裝引擎會：
