@@ -1,5 +1,5 @@
 ---
-published: true
+tags: aa, bb
 ---
 ## A New Post
 
