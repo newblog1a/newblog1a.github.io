@@ -8,6 +8,7 @@ content:
       - name: title
         type: string
       - name: tags
-        type: list
+        type: string
+        list: true
       - name: body
         type: rich-text
