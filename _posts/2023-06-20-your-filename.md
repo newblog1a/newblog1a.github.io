@@ -21,3 +21,14 @@ tags要 `tags: aa, bb` 還是 `tags: [aa, bb]`?
 `tags: [aa, bb]`。但`tags: aa, bb` kind of work
 
 https://deepwiki.com/search/tags-tags-aa-bb-tags-aa-bb_d446efd5-5462-4173-9dbf-c166f454b0c2?mode=fast
+
+## pages cms
+
+frontmatter:
+```
+---
+(empty)
+---
+content
+```
+will error
