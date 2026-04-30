@@ -23,7 +23,16 @@ A dash between the date and the title is **required**.
 
 tags要 `tags: aa, bb` 還是 `tags: [aa, bb]`?
 
-`tags: [aa, bb]`。但`tags: aa, bb` kind of work
+1. `tags: [aa, bb]`
+
+2. `tags: aa, bb` kind of work
+
+3.
+```
+tags:
+  - aa
+  - bb
+```
 
 [https://deepwiki.com/search/tags-tags-aa-bb-tags-aa-bb_d446efd5-5462-4173-9dbf-c166f454b0c2?mode=fast](https://deepwiki.com/search/tags-tags-aa-bb-tags-aa-bb_d446efd5-5462-4173-9dbf-c166f454b0c2?mode=fast)
 
@@ -31,7 +40,7 @@ tags要 `tags: aa, bb` 還是 `tags: [aa, bb]`?
 
 frontmatter:
 
-```
+```yml
 ---
 (empty)
 ---
